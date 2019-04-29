@@ -1,0 +1,17 @@
+type Query {
+  users: [User]
+}
+
+type Mutation {
+  login(email: String!, password: String!): AuthResponse!
+}
+
+type AuthResponse {
+  success: Boolean
+  token: String
+}
+
+type User {
+  id: ID!
+  name: String
+}
