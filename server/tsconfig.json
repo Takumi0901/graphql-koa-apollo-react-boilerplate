@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "lib": ["dom", "es2018", "esnext.asynciterable"],
+    "target": "es6",
+    "module": "commonjs",
+    "sourceMap": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "esModuleInterop": true,
+    "typeRoots": ["node_modules/@types"]
+  },
+  "include": ["src/**/**.ts"],
+  "exclude": ["node_modules"]
+}
