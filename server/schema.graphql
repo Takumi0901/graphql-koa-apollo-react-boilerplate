@@ -1,8 +1,1 @@
-type Query {
-  users: [User]
-}
-
-type User {
-  id: ID!
-  name: String
-}
+/Users/kimuratakumi/works/graphql-koa-apollo-react-boilerplate/common/graphql/schema.graphql
