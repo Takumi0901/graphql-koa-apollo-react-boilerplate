@@ -3,7 +3,7 @@ import { importSchema } from 'graphql-import'
 import { makeExecutableSchema } from 'graphql-tools'
 import Koa from 'koa'
 import cors from '@koa/cors'
-// import mocks from './mocks'
+import mocks from './mocks'
 import resolvers from './resolvers'
 
 const typeDefs = importSchema('schema.graphql')
@@ -13,7 +13,7 @@ const server = new ApolloServer({
     resolvers,
     typeDefs
   }),
-  mocks: process.env.NODE_ENV === 'mock' ? true : false
+  mocks: process.env.NODE_ENV === 'mock' ? mocks : false
 })
 
 const app = new Koa()
