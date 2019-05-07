@@ -24,7 +24,7 @@ const ErrorHandler: React.FunctionComponent<{}> = () => {
       render={({ loading, error }: { loading: boolean; error: ApolloError }) => {
         setToast(Boolean(error))
         if (isShowToast) setTimeout(() => setToast(false), 2000)
-        // const errorText = error ? handler(error.graphQLErrors[0].extensions.code) : "";
+        const errorText = error ? handler(error.graphQLErrors[0].extensions.code) : ''
         return (
           <div>
             {loading && null}
@@ -32,7 +32,7 @@ const ErrorHandler: React.FunctionComponent<{}> = () => {
               <Toast
                 isShow={isShowToast}
                 setToast={setToast}
-                text={''}
+                text={errorText}
                 color={'#e34959'}
                 offsetX={40}
                 offsetY={60}

@@ -9,10 +9,10 @@ const ErrorMessages: { [key: string]: string } = {
 
 // prettier-ignore
 const Regex: { [key: string]: RegExp } = {
-  email: /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
+  email: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
   num: /^[0-9]+$/,
-  password: /^(?=.*?[a-zA-Z])(?=.*?\d)[!-\~]{8,16}$/,
-  url: /^(https?)(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)$/,
+  password: /^(?=.*?[a-zA-Z])(?=.*?\d)[!-~]{8,16}$/,
+  url: /^(https?)(:\/\/[-_.!~*'()a-zA-Z0-9;/?:@&=+$,%#]+)$/,
   time: /^\d{2}:\d{2}$/
 }
 

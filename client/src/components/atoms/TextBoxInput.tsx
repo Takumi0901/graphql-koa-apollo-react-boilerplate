@@ -16,7 +16,7 @@ type Props = {
   name: string
   validate?: (values: string) => void | string
   errors?: string
-  touched?: boolean
+  touched?: string
 }
 
 const TextBoxInput: React.SFC<Props> = props => {
@@ -27,7 +27,7 @@ const TextBoxInput: React.SFC<Props> = props => {
         type={type}
         {...props}
         validate={validate}
-        className={ClassNamesExport({ isError: errors && touched })}
+        className={ClassNamesExport({ isError: errors && touched.length > 0 })}
       />
       {errors && touched && (
         <ScBoxError>

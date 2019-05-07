@@ -6,13 +6,20 @@ import Button from 'src/components/atoms/Button'
 import { AppContainer } from 'src/containers/app/App'
 import styled, { css } from 'src/styles'
 import { Subscribe } from 'unstated'
+import { useSignoutMutation } from 'src/gen/actions'
 // import Badge from 'src/atoms/Badge'
 // import SearchForm from 'components/organisms/doctor/common/SearchForm'
 
 const Header: React.FunctionComponent<RouteComponentProps<{}>> = ({ history }) => {
+  const onSubmitLogout = useSignoutMutation()
   return (
     <Subscribe to={[AppContainer]}>
       {(app: any) => {
+        const onClickSignout = () => {
+          onSubmitLogout()
+          app.logout()
+          history.push('/login')
+        }
         return (
           <ScHeader color={'white'}>
             <ScHeaderInner>
@@ -24,7 +31,7 @@ const Header: React.FunctionComponent<RouteComponentProps<{}>> = ({ history }) =
                   {app.state.token.length < 1 ? (
                     <Button sizeH={40} name="ログイン" onClick={() => history.push('/login')} />
                   ) : (
-                    <Button sizeH={40} name="ログアウト" onClick={() => history.push('/login')} />
+                    <Button sizeH={40} name="ログアウト" onClick={() => onClickSignout()} />
                   )}
                 </FlexCol>
               </Flex>
