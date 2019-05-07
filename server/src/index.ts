@@ -4,6 +4,7 @@ import { makeExecutableSchema } from 'graphql-tools'
 import Koa from 'koa'
 import cors from '@koa/cors'
 import mocks from './mocks'
+import context from './context'
 import resolvers from './resolvers'
 
 const typeDefs = importSchema('schema.graphql')
@@ -13,6 +14,7 @@ const server = new ApolloServer({
     resolvers,
     typeDefs
   }),
+  context,
   mocks: process.env.NODE_ENV === 'mock' ? mocks : false
 })
 

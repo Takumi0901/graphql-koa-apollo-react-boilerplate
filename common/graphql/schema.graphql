@@ -2,6 +2,20 @@ type Query {
   users: [User]
 }
 
+type Mutation {
+  signin(email: String!, password: String!): AuthResponse!
+  signout: Response!
+}
+
+type Response {
+  success: Boolean
+}
+
+type AuthResponse {
+  success: Boolean
+  token: String
+}
+
 type User {
   id: ID!
   name: String

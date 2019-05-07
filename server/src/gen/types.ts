@@ -8,8 +8,27 @@ export type Scalars = {
   Float: number
 }
 
+export type AuthResponse = {
+  success?: Maybe<Scalars['Boolean']>
+  token?: Maybe<Scalars['String']>
+}
+
+export type Mutation = {
+  signin: AuthResponse
+  signout: Response
+}
+
+export type MutationSigninArgs = {
+  email: Scalars['String']
+  password: Scalars['String']
+}
+
 export type Query = {
   users?: Maybe<Array<Maybe<User>>>
+}
+
+export type Response = {
+  success?: Maybe<Scalars['Boolean']>
 }
 
 export type User = {
@@ -82,11 +101,28 @@ export type ResolversTypes = {
   User: User
   ID: Scalars['ID']
   String: Scalars['String']
+  Mutation: {}
+  AuthResponse: AuthResponse
   Boolean: Scalars['Boolean']
+  Response: Response
+}
+
+export type AuthResponseResolvers<ContextType = any, ParentType = ResolversTypes['AuthResponse']> = {
+  success?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>
+  token?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+}
+
+export type MutationResolvers<ContextType = any, ParentType = ResolversTypes['Mutation']> = {
+  signin?: Resolver<ResolversTypes['AuthResponse'], ParentType, ContextType, MutationSigninArgs>
+  signout?: Resolver<ResolversTypes['Response'], ParentType, ContextType>
 }
 
 export type QueryResolvers<ContextType = any, ParentType = ResolversTypes['Query']> = {
   users?: Resolver<Maybe<Array<Maybe<ResolversTypes['User']>>>, ParentType, ContextType>
+}
+
+export type ResponseResolvers<ContextType = any, ParentType = ResolversTypes['Response']> = {
+  success?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>
 }
 
 export type UserResolvers<ContextType = any, ParentType = ResolversTypes['User']> = {
@@ -95,7 +131,10 @@ export type UserResolvers<ContextType = any, ParentType = ResolversTypes['User']
 }
 
 export type Resolvers<ContextType = any> = {
+  AuthResponse?: AuthResponseResolvers<ContextType>
+  Mutation?: MutationResolvers<ContextType>
   Query?: QueryResolvers<ContextType>
+  Response?: ResponseResolvers<ContextType>
   User?: UserResolvers<ContextType>
 }
 
