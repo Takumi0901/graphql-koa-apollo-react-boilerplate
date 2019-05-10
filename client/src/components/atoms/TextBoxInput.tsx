@@ -27,9 +27,9 @@ const TextBoxInput: React.SFC<Props> = props => {
         type={type}
         {...props}
         validate={validate}
-        className={ClassNamesExport({ isError: errors && touched.length > 0 })}
+        className={ClassNamesExport({ isError: errors && touched === 'true' })}
       />
-      {errors && touched && (
+      {errors && touched === 'true' && (
         <ScBoxError>
           <FontAwesomeIcon icon={faExclamationTriangle} style={{ marginRight: '4px' }} />
           <ErrorMessage name={name} />

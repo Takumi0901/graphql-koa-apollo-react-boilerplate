@@ -48,7 +48,7 @@ const LoginField: React.FunctionComponent<RouteComponentProps<{}>> = ({ history 
                   placeholder="メールアドレス"
                   classes={['u-mb-24']}
                   errors={props.errors.email}
-                  touched={props.values.email}
+                  touched={props.touched.email ? 'true' : 'false'}
                   validate={composeValidators(email, required)}
                 />
                 <h3>パスワード</h3>
@@ -57,7 +57,7 @@ const LoginField: React.FunctionComponent<RouteComponentProps<{}>> = ({ history 
                   name="password"
                   placeholder="パスワード"
                   errors={props.errors.password}
-                  touched={props.values.password}
+                  touched={props.touched.password ? 'true' : 'false'}
                   validate={composeValidators(password, required)}
                   classes={['u-mb-24']}
                 />

@@ -21,9 +21,6 @@ interface Props {
 
 const Toast: React.FC<Props> = props => {
   const { isShow, setToast, classes, text } = props
-
-  console.log(props)
-
   return (
     <ScToast className={ClassNamesExport(classes)} {...props} isShow={isShow}>
       <ScToastInner className={'toast__inner'} {...props}>
