@@ -8,7 +8,7 @@
     "gen": "graphql-codegen --config codegen.yml",
     "start": "npm run gen"
   },
-  "author": "",
+  "author": "takumi kimura",
   "license": "ISC",
   "devDependencies": {
     "@graphql-codegen/cli": "^1.0.4",
