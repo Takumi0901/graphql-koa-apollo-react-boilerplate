@@ -7,15 +7,17 @@ import { withRouter, RouteComponentProps } from 'react-router-dom'
 import { useSigninMutation } from 'src/gen/actions'
 import { password, email, required, composeValidators } from 'src/utils/Validate'
 import { Formik, FormikProps } from 'formik'
-import Toast from 'src/components/atoms/Toast'
 
 type Values = {
   email: string
   password: string
 }
 
-const LoginField: React.FunctionComponent<RouteComponentProps<{}>> = ({ history }) => {
-  const [isShowToast, setToast] = React.useState(false)
+type Props = {
+  setToast: (isShowToast: boolean) => void
+}
+
+const LoginField: React.FunctionComponent<RouteComponentProps<{}> & Props> = ({ history, setToast }) => {
   const onSubmitSignIn = useSigninMutation({
     update: (_, { data }) => {
       if (data.signin.success) {
@@ -69,21 +71,10 @@ const LoginField: React.FunctionComponent<RouteComponentProps<{}>> = ({ history 
           }}
         />
       </CardContent>
-      <Toast
-        isShow={isShowToast}
-        setToast={setToast}
-        text={'メールアドレスまたはパスワードが間違っています'}
-        color={'#e34959'}
-        offsetX={40}
-        offsetY={60}
-        zIndex={2000}
-        vertical={'bottom'}
-        align={'right'}
-      />
     </FlexCardWithTitle>
   )
 }
 
-const LoginCard = withRouter<RouteComponentProps<{}>>(LoginField)
+const LoginCard = withRouter<RouteComponentProps<{}> & Props>(LoginField)
 
 export default LoginCard
