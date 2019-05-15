@@ -10,7 +10,7 @@ import { Wrapper, LogoffContent, Content } from './styles/app'
 import Toast from 'src/components/atoms/Toast'
 import { useSelector, useDispatch } from 'react-redux'
 import { IStore } from 'src/redux/IStore'
-import { toggleToast } from 'src/redux/toast'
+import { toggleToast } from 'src/redux/modules/toast'
 import ErrorHandler from 'src/containers/app/organisms/ErrorHandler'
 
 const store = configureStore()

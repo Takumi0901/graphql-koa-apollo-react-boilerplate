@@ -8,8 +8,8 @@ import { useSigninMutation } from 'src/gen/actions'
 import { password, email, required, composeValidators } from 'src/utils/Validate'
 import { Formik, FormikProps } from 'formik'
 import { useDispatch } from 'react-redux'
-import { toggleAuth } from 'src/redux/auth'
-import { toggleToast } from 'src/redux/toast'
+import { toggleAuth } from 'src/redux/modules/auth'
+import { toggleToast } from 'src/redux/modules/toast'
 
 type Values = {
   email: string

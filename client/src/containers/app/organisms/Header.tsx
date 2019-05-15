@@ -7,7 +7,7 @@ import styled, { css } from 'src/styles'
 import { useSignoutMutation } from 'src/gen/actions'
 import { useSelector, useDispatch } from 'react-redux'
 import { IStore } from 'src/redux/IStore'
-import { toggleAuth } from 'src/redux/auth'
+import { toggleAuth } from 'src/redux/modules/auth'
 
 const Header: React.FunctionComponent<RouteComponentProps<{}>> = ({ history }) => {
   const onSubmitLogout = useSignoutMutation()

@@ -2,7 +2,7 @@ import * as React from 'react'
 import { ApolloError } from 'apollo-client'
 import { NetworkStatusNotifierElement } from 'src/graphql/client'
 import { useDispatch } from 'react-redux'
-import { toggleToast } from 'src/redux/toast'
+import { toggleToast } from 'src/redux/modules/toast'
 
 export const handler = (code: string): string => {
   switch (code) {
