@@ -3,47 +3,44 @@ import { Link, withRouter, RouteComponentProps } from 'react-router-dom'
 import Flex from 'src/components/atoms/Flex'
 import FlexCol from 'src/components/atoms/FlexCol'
 import Button from 'src/components/atoms/Button'
-import { AppContainer } from 'src/containers/app/App'
 import styled, { css } from 'src/styles'
-import { Subscribe } from 'unstated'
 import { useSignoutMutation } from 'src/gen/actions'
-// import Badge from 'src/atoms/Badge'
-// import SearchForm from 'components/organisms/doctor/common/SearchForm'
+import { useSelector, useDispatch } from 'react-redux'
+import { IStore } from 'src/redux/IStore'
+import { toggleAuth } from 'src/redux/auth'
 
 const Header: React.FunctionComponent<RouteComponentProps<{}>> = ({ history }) => {
   const onSubmitLogout = useSignoutMutation()
+  const token = useSelector((state: IStore) => state.auth.token)
+
+  const dispatch = useDispatch()
+  const onClickSignOut = React.useCallback(() => {
+    onSubmitLogout()
+    history.push('/login')
+    return dispatch(toggleAuth({ token: '' }))
+  }, [])
+
   return (
-    <Subscribe to={[AppContainer]}>
-      {(app: any) => {
-        const onClickSignout = () => {
-          onSubmitLogout()
-          app.logout()
-          history.push('/login')
-        }
-        return (
-          <ScHeader color={'white'}>
-            <ScHeaderInner>
-              <Flex align={'between'} vAlign={'middle'}>
-                <FlexCol size={4}>
-                  <Link to={'/'}>LOGO</Link>
-                </FlexCol>
-                <FlexCol size={8} classes={['u-ta-r']}>
-                  {app.state.token.length < 1 ? (
-                    <Button sizeH={40} name="ログイン" onClick={() => history.push('/login')} />
-                  ) : (
-                    <Button sizeH={40} name="ログアウト" onClick={() => onClickSignout()} />
-                  )}
-                </FlexCol>
-              </Flex>
-            </ScHeaderInner>
-          </ScHeader>
-        )
-      }}
-    </Subscribe>
+    <ScHeader color={'white'}>
+      <ScHeaderInner>
+        <Flex align={'between'} vAlign={'middle'}>
+          <FlexCol size={4}>
+            <Link to={'/'}>LOGO</Link>
+          </FlexCol>
+          <FlexCol size={8} classes={['u-ta-r']}>
+            {token.length < 1 ? (
+              <Button sizeH={40} name="ログイン" onClick={() => history.push('/login')} />
+            ) : (
+              <Button sizeH={40} name="ログアウト" onClick={() => onClickSignOut()} />
+            )}
+          </FlexCol>
+        </Flex>
+      </ScHeaderInner>
+    </ScHeader>
   )
 }
 
-export default withRouter<any>(Header)
+export default withRouter<RouteComponentProps<{}>>(Header)
 
 export const ScHeader = styled.header`
   ${({ theme }: any) => css`
