@@ -22,7 +22,7 @@ const Label: React.SFC<Props> = props => {
 export default Label
 
 export const ScLabel = styled.span`
-  ${({ color = '#646464', sizeH = 24, border }: ScTypes<Props>) => css`
+  ${({ color = '#333', sizeH = 24, border }: ScTypes<Props>) => css`
     font-size: 1.2rem;
     display: inline-block;
     height: ${sizeH}px;

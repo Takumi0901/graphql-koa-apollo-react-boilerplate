@@ -60,7 +60,7 @@ export const ScBoxInput = styled(Field)`
     box-sizing: border-box;
     display: block;
     background-color: transparent;
-    color: #646464;
+    color: #333;
     border: 1px solid #bcbcbc;
     outline: 0;
     width: 100%;
@@ -75,7 +75,7 @@ export const ScBoxInput = styled(Field)`
     background: #fff;
     position: relative;
     &:focus {
-      border-color: #53aee0;
+      border-color: #065d93;
     }
     &.isError {
       border-color: #e34959;

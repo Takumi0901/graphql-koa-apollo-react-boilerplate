@@ -26,7 +26,7 @@ export const ScLinkText = styled(Link)`
     css`
       &:link,
       &:visited {
-        color: #53aee0;
+        color: #065d93;
         text-decoration: underline;
       }
 

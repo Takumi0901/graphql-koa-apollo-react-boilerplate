@@ -33,7 +33,7 @@ export const ScLoading = styled.div`
 
 export const ScSpinner = styled.span`
   ${({ theme }: ScTypes<{ options: Props }>) => css`
-    color: #646464;
+    color: #333;
     font-size: 24px !important;
     display: inline-block;
     padding: ${theme.base.size * 2}px 0;

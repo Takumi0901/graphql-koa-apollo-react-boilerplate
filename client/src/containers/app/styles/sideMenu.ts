@@ -46,7 +46,7 @@ export const ScSignOut = styled.a`
   `};
 `
 
-export const ScSideMenuInner = styled.div`
+export const ScSideMenuInner = styled.nav`
   ${({ theme }) => css`
     margin: 100px 0 ${theme.base.size * 10}px;
     & .icon {
@@ -56,7 +56,7 @@ export const ScSideMenuInner = styled.div`
       padding: 0 8px;
       border-left: 3px solid #2e374e;
       &.isActive {
-        border-left: 3px solid #53aee0;
+        border-left: 3px solid #065d93;
       }
       &.isInnerActive {
         background: #283044;

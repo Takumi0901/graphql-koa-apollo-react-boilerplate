@@ -25,7 +25,9 @@ const Header: React.FunctionComponent<RouteComponentProps<{}>> = ({ history }) =
             <ScHeaderInner>
               <Flex align={'between'} vAlign={'middle'}>
                 <FlexCol size={4}>
-                  <Link to={'/'}>LOGO</Link>
+                  <h1>
+                    <Link to={'/'}>LOGO</Link>
+                  </h1>
                 </FlexCol>
                 <FlexCol size={8} classes={['u-ta-r']}>
                   {app.state.token.length < 1 ? (

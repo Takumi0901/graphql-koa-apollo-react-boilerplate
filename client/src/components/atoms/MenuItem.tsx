@@ -21,7 +21,7 @@ const MenuItem: React.SFC<Props> = props => {
 export default MenuItem
 
 export const ScMenuItem = styled.li`
-  ${({ theme, color = '#646464', onClick }: ScTypes<Props>) => css`
+  ${({ theme, color = '#333', onClick }: ScTypes<Props>) => css`
     display: block;
     margin-bottom: ${theme.base.size / 2}px;
     color: ${color};

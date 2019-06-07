@@ -10,7 +10,7 @@ const NotFound: React.FC<RouteComponentProps<{}>> = ({ history }) => {
       <FlexCardWithTitle size={16} title="404">
         <CardContent border="#e6e6e6">
           <p className={'u-mb-32'}>このページは存在しないか削除された可能性があります。</p>
-          <Button color="#53aee0" name="トップページへ戻る" onClick={() => history.push('/')} />
+          <Button color="#065d93" name="トップページへ戻る" onClick={() => history.push('/')} />
         </CardContent>
       </FlexCardWithTitle>
     </React.Fragment>

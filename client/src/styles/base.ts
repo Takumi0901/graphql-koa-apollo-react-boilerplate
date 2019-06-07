@@ -12,7 +12,7 @@ const BaseStyles = createGlobalStyle`
   body {
     margin: 0;
     background: #fafafa;
-    color: #646464;
+    color: #333;
     font-family: ${({ theme }: { theme: ITheme }) => theme.base.fontFamily};
     font-size: 1em;
     line-height: ${({ theme }: { theme: ITheme }) => theme.base.lineHeight};
@@ -25,7 +25,7 @@ const BaseStyles = createGlobalStyle`
 
     &:link,
     &:visited {
-      color: #646464;
+      color: #333;
       text-decoration: none;
     }
   
@@ -36,12 +36,12 @@ const BaseStyles = createGlobalStyle`
   }
   .linkText {
     cursor: pointer;
-    color: #53aee0;
+    color: #065d93;
     text-decoration: underline;
 
     &:link,
     &:visited {
-      color: #53aee0;
+      color: #065d93;
       text-decoration: underline;
     }
   
