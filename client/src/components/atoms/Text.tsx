@@ -22,7 +22,7 @@ const Text: React.SFC<Props> = props => {
 export default Text
 
 export const ScText = styled.p`
-  ${({ color = '#646464', onClick }: ScTypes<Props>) => css`
+  ${({ color = '#333', onClick }: ScTypes<Props>) => css`
     color: ${color};
     cursor: ${onClick && 'pointer'};
   `};

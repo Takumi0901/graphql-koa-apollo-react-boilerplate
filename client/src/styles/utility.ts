@@ -6,19 +6,19 @@ export const utilityStyles = () => css`
     border: none !important;
   }
   .u-fc-primary {
-    color: #53aee0 !important;
+    color: #065d93 !important;
   }
   .u-fc-secondary {
     color: #2b506f !important;
   }
   .u-fc-action {
-    color: #42c813 !important;
+    color: #1d6600 !important;
   }
   .u-fc-caution {
-    color: #ed5565 !important;
+    color: #b50315 !important;
   }
   .u-fc-grey {
-    color: #d3d3d3 !important;
+    color: #575757 !important;
   }
   .u-fc-white {
     color: #fff !important;

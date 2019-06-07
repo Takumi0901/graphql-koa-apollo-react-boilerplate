@@ -98,7 +98,7 @@ export const ScToast = styled.div`
 `
 
 export const ScToastInner = styled.div`
-  ${({ theme, color = '#53aee0', height = 48 }: ScTypes<Props>) => css`
+  ${({ theme, color = '#065d93', height = 48 }: ScTypes<Props>) => css`
     padding: 0 ${theme.base.size * 6}px 0 ${theme.base.size * 2}px;
     height: ${height}px;
     line-height: ${height}px;

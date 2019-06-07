@@ -2,10 +2,10 @@ import * as React from 'react'
 import { Route, withRouter, Switch } from 'react-router-dom'
 import App from 'src/containers/app/App'
 
-const Users = React.lazy(() => import('./containers/users'))
-const Login = React.lazy(() => import('./containers/login'))
-const NotFound = React.lazy(() => import('./containers/app/NotFound'))
-const CatchError = React.lazy(() => import('./containers/app/CatchError'))
+const Users = React.lazy(() => import(/* webpackChunkName: "Users" */ './containers/users'))
+const Login = React.lazy(() => import(/* webpackChunkName: "Login" */ './containers/login'))
+const NotFound = React.lazy(() => import(/* webpackChunkName: "NotFound" */ './containers/app/NotFound'))
+const CatchError = React.lazy(() => import(/* webpackChunkName: "CatchError" */ './containers/app/CatchError'))
 
 export default (
   <App>

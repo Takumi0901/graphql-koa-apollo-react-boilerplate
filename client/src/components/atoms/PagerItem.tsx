@@ -37,7 +37,7 @@ export const ScPagerItem = styled.button`
     vertical-align: middle;
     font-size: 1.4rem;
     white-space: nowrap;
-    color: #646464;
+    color: #333;
     outline: none;
     touch-action: manipulation;
     cursor: pointer;
@@ -52,8 +52,8 @@ export const ScPagerItem = styled.button`
 
     &:hover {
       color: #fff;
-      border: solid 1px #53aee0;
-      background: #53aee0;
+      border: solid 1px #065d93;
+      background: #065d93;
     }
 
     &.disabled,
@@ -66,8 +66,8 @@ export const ScPagerItem = styled.button`
     isActive &&
     css`
       color: #fff;
-      border: solid 1px #53aee0;
-      background: #53aee0;
+      border: solid 1px #065d93;
+      background: #065d93;
       &:hover {
         opacity: 0.7;
       }

@@ -20,7 +20,7 @@ const Title: React.SFC<Props> = props => {
 export default Title
 
 export const ScTitle = styled.h2`
-  ${({ color = '#646464' }: ScTypes<Props>) => css`
+  ${({ color = '#333' }: ScTypes<Props>) => css`
     color: ${color};
     border-bottom: solid 4px ${color};
     font-size: 2.4rem;
