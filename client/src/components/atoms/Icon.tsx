@@ -17,7 +17,7 @@ const Icon: React.SFC<Props> = props => {
 export default Icon
 
 export const ScIcon = styled.i`
-  ${({ size, onClick, color = '#646464' }: ScTypes<Props>) => css`
+  ${({ size, onClick, color = '#333' }: ScTypes<Props>) => css`
     font-size: ${size ? size / 10 : 1.4}rem;
     cursor: ${onClick && 'pointer'};
     color: ${color};

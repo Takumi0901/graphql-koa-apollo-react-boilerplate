@@ -17,8 +17,8 @@ exports[`Storyshots AccountConnect default 1`] = `
         className="sc-ifAKCX SpOgS"
       >
         <button
-          className="sc-bdVaJa hVOISU"
-          color="#53aee0"
+          className="sc-bdVaJa jwhrPs"
+          color="#065d93"
           name="Button"
           onClick={[Function]}
           type="button"
@@ -307,7 +307,7 @@ exports[`Storyshots AccountConnect default 1`] = `
                                 }
                               }
                             >
-                              #53aee0
+                              #065d93
                             </span>
                             "
                           </span>

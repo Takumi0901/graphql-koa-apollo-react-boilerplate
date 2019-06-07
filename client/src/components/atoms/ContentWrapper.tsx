@@ -29,7 +29,7 @@ export const ScContentWrapper = styled.div`
 `
 
 export const ScContentGradWrapper = styled(ScContentWrapper)`
-  ${({ color = '#53aee0' }: ScTypes<Props>) => css`
+  ${({ color = '#065d93' }: ScTypes<Props>) => css`
     color: #fff;
     background: ${color};
   `};

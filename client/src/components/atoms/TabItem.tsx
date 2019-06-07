@@ -34,7 +34,7 @@ export const ScTabItem = styled(Link)`
       background: #e6e6e6;
     }
     &.isActive {
-      border-bottom: solid 2px ##53aee0;
+      border-bottom: solid 2px ##065d93;
     }
   `};
 `

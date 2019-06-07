@@ -63,13 +63,13 @@ export const ScButton = styled.button`
     display: inline-block;
     height: ${sizeH}px;
     padding: 0 2.5em;
-    border: solid ${borderW}px #53aee0;
+    border: solid ${borderW}px #065d93;
     border-radius: 4px;
     text-align: center;
     vertical-align: middle;
     font-size: 1.4rem;
     white-space: nowrap;
-    color: #53aee0;
+    color: #065d93;
     outline: none;
     touch-action: manipulation;
     cursor: pointer;
@@ -153,7 +153,7 @@ export const ScButton = styled.button`
 `
 
 export const ScInverseButton = styled(ScButton)`
-  ${({ color = '#646464', fontColor = '#646464', bgColor = 'white' }: ScTypes<Props>) => css`
+  ${({ color = '#333', fontColor = '#333', bgColor = 'white' }: ScTypes<Props>) => css`
     color: ${fontColor};
     background: ${bgColor};
     border-color: ${color};
@@ -174,7 +174,7 @@ export const ScInverseButton = styled(ScButton)`
 `
 
 export const ScGhostButton = styled(ScButton)`
-  ${({ color = '#646464', fontColor = '#646464' }: ScTypes<Props>) => css`
+  ${({ color = '#333', fontColor = '#333' }: ScTypes<Props>) => css`
     color: ${color};
     background: none;
     border-color: ${color};
@@ -187,7 +187,7 @@ export const ScGhostButton = styled(ScButton)`
 `
 
 export const ScGradButton = styled(ScButton)`
-  ${({ color = '#53aee0' }: ScTypes<Props>) => css`
+  ${({ color = '#065d93' }: ScTypes<Props>) => css`
     color: #fff;
     border: 0;
     background: ${color};

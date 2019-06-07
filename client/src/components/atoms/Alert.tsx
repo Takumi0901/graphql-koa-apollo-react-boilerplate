@@ -21,7 +21,7 @@ const Alert: React.SFC<Props> = props => {
 export default Alert
 
 export const ScAlert = styled.div`
-  ${({ theme, color = '#fff', fontColor = '#646464' }: ScTypes<Props>) => css`
+  ${({ theme, color = '#fff', fontColor = '#333' }: ScTypes<Props>) => css`
     display: block;
     padding: ${theme.base.size * 2}px;
     position: relative;

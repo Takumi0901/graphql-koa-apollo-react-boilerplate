@@ -28,7 +28,7 @@ const CatchError: React.FC<RouteComponentProps<{}>> = ({ history }) => {
             </div>
           </Alert>
 
-          <Button color="#53aee0" name="トップページへ戻る" onClick={() => history.push('/')} />
+          <Button color="#065d93" name="トップページへ戻る" onClick={() => history.push('/')} />
         </CardContent>
       </FlexCardWithTitle>
     </React.Fragment>

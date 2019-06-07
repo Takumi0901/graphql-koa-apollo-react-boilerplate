@@ -43,28 +43,32 @@ const LoginField: React.FunctionComponent<RouteComponentProps<{}> & Props> = ({ 
 
             return (
               <form onSubmit={props.handleSubmit}>
-                <h3>メールアドレス</h3>
-                <TextBoxInput
-                  type="email"
-                  name="email"
-                  placeholder="メールアドレス"
-                  classes={['u-mb-24']}
-                  errors={props.errors.email}
-                  touched={props.touched.email ? 'true' : 'false'}
-                  validate={composeValidators(email, required)}
-                />
-                <h3>パスワード</h3>
-                <TextBoxInput
-                  type="password"
-                  name="password"
-                  placeholder="パスワード"
-                  errors={props.errors.password}
-                  touched={props.touched.password ? 'true' : 'false'}
-                  validate={composeValidators(password, required)}
-                  classes={['u-mb-24']}
-                />
+                <label>
+                  <h3>メールアドレス</h3>
+                  <TextBoxInput
+                    type="email"
+                    name="email"
+                    placeholder="メールアドレス"
+                    classes={['u-mb-24']}
+                    errors={props.errors.email}
+                    touched={props.touched.email ? 'true' : 'false'}
+                    validate={composeValidators(email, required)}
+                  />
+                </label>
+                <label>
+                  <h3>パスワード</h3>
+                  <TextBoxInput
+                    type="password"
+                    name="password"
+                    placeholder="パスワード"
+                    errors={props.errors.password}
+                    touched={props.touched.password ? 'true' : 'false'}
+                    validate={composeValidators(password, required)}
+                    classes={['u-mb-24']}
+                  />
+                </label>
                 <div className="u-ta-c">
-                  <Button data-testid="login" name="ログイン" color="#53aee0" type="submit" />
+                  <Button data-testid="login" name="ログイン" color="#065d93" type="submit" />
                 </div>
               </form>
             )

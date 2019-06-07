@@ -31,7 +31,7 @@ const LinkItem: React.SFC<Props> = props => {
 export default LinkItem
 
 export const ScLinkItem = styled(Link)`
-  ${({ color = '#646464' }: ScTypes<Props>) => css`
+  ${({ color = '#333' }: ScTypes<Props>) => css`
     position: relative;
     display: inline-block;
     padding: 0.8em;
@@ -59,7 +59,7 @@ export const ScLinkItem = styled(Link)`
 `
 
 export const ScLinkItemSpan = styled.span`
-  ${({ color = '#646464' }: ScTypes<Props>) => css`
+  ${({ color = '#333' }: ScTypes<Props>) => css`
     position: relative;
     display: inline-block;
     padding: 0.8em;

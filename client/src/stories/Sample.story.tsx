@@ -7,7 +7,7 @@ import CardContent from 'src/components/atoms/CardContent'
 storiesOf('AccountConnect', module).add('default', () => (
   <StoryWrapper>
     <CardContent>
-      <Button name={'Button'} color="#53aee0" blocked onClick={() => alert('OnClick!')} />
+      <Button name={'Button'} color="#065d93" blocked onClick={() => alert('OnClick!')} />
     </CardContent>
   </StoryWrapper>
 ))
