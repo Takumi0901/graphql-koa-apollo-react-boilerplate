@@ -7,8 +7,13 @@ import { MutationResolvers } from '../gen/types'
 // import * as Cache from '../cache'
 
 const Mutation: MutationResolvers = {
-  async signin(_obj, _arg) {
-    return { success: true, token: 'hgoehoge' }
+  async signin(_obj, arg) {
+    const { email } = arg
+    if (email === 'hogehoge@gmail.com') {
+      return { success: true, token: 'hgoehoge' }
+    } else {
+      return { success: false, token: '' }
+    }
   },
   async signout(_obj, _arg, context: Context) {
     return withLogout(context)(async _ => ({ success: true }))

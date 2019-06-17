@@ -1,7 +1,8 @@
 import * as React from 'react'
 import { ApolloError } from 'apollo-client'
 import { NetworkStatusNotifierElement } from 'src/graphql/client'
-import Toast from 'src/components/atoms/Toast'
+import { useDispatch } from 'react-redux'
+import { IToast, toggleToast } from 'src/redux/modules/toast'
 
 export const handler = (code: string): string => {
   switch (code) {
@@ -18,31 +19,14 @@ export const handler = (code: string): string => {
 }
 
 const ErrorHandler: React.FunctionComponent<{}> = () => {
-  const [isShowToast, setToast] = React.useState(false)
+  const dispatch = useDispatch()
+  const onToggleToast = (props: IToast) => dispatch(toggleToast(props))
   return (
     <NetworkStatusNotifierElement
       render={({ loading, error }: { loading: boolean; error: ApolloError }) => {
-        setToast(Boolean(error))
-        if (isShowToast) setTimeout(() => setToast(false), 2000)
         const errorText = error ? handler(error.graphQLErrors[0].extensions.code) : ''
-        return (
-          <div>
-            {loading && null}
-            {error && (
-              <Toast
-                isShow={isShowToast}
-                setToast={setToast}
-                text={errorText}
-                color={'#e34959'}
-                offsetX={40}
-                offsetY={60}
-                zIndex={2000}
-                vertical={'bottom'}
-                align={'right'}
-              />
-            )}
-          </div>
-        )
+        if (error) onToggleToast({ text: errorText, isShow: true })
+        return <div>{loading && null}</div>
       }}
     />
   )

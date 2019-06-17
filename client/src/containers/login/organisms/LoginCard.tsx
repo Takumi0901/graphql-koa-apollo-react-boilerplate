@@ -7,25 +7,33 @@ import { withRouter, RouteComponentProps } from 'react-router-dom'
 import { useSigninMutation } from 'src/gen/actions'
 import { password, email, required, composeValidators } from 'src/utils/Validate'
 import { Formik, FormikProps } from 'formik'
+import { useDispatch } from 'react-redux'
+import { toggleAuth } from 'src/redux/modules/auth'
+import { IToast, toggleToast } from 'src/redux/modules/toast'
 
 type Values = {
   email: string
   password: string
 }
 
-type Props = {
-  setToast: (isShowToast: boolean) => void
-}
+type Props = {}
 
-const LoginField: React.FunctionComponent<RouteComponentProps<{}> & Props> = ({ history, setToast }) => {
+const LoginField: React.FunctionComponent<RouteComponentProps<{}> & Props> = ({ history }) => {
+  const dispatch = useDispatch()
+  const onToggleAuth = (token: string) => dispatch(toggleAuth({ token: token }))
+  const setToken = (token: string) => {
+    localStorage.token = token
+    history.push('/')
+    onToggleAuth(token)
+  }
+  const onToggleToast = (props: IToast) => dispatch(toggleToast(props))
   const onSubmitSignIn = useSigninMutation({
     update: (_, { data }) => {
       if (data.signin.success) {
-        localStorage.token = data.signin.token
-        history.push('/')
+        setToken(data.signin.token)
       } else {
-        setToast(true)
-        setTimeout(() => setToast(false), 2000)
+        onToggleToast({ text: 'メールアドレスまたはパスワードが間違っています', isShow: true })
+        setTimeout(() => onToggleToast({ text: 'メールアドレスまたはパスワードが間違っています', isShow: false }), 2000)
       }
     }
   })
@@ -39,8 +47,6 @@ const LoginField: React.FunctionComponent<RouteComponentProps<{}> & Props> = ({ 
             onSubmitSignIn({ variables: values })
           }}
           render={(props: FormikProps<Values>) => {
-            console.log(props)
-
             return (
               <form onSubmit={props.handleSubmit}>
                 <label>
