@@ -19,9 +19,7 @@ const MainContent: React.FunctionComponent<{}> = props => {
   const token = useSelector((state: IStore) => state.auth.token)
   const { isShow, text } = useSelector((state: IStore) => state.toast)
   const dispatch = useDispatch()
-  const onToggleToast = React.useCallback(() => {
-    return dispatch(toggleToast({ text: '', isShow: false }))
-  }, [])
+  const onToggleToast = () => dispatch(toggleToast({ text: '', isShow: false }))
   return (
     <React.Fragment>
       {token.length < 1 ? <LogoffContent>{props.children}</LogoffContent> : <Content>{props.children}</Content>}

@@ -2,7 +2,7 @@ import * as React from 'react'
 import { ApolloError } from 'apollo-client'
 import { NetworkStatusNotifierElement } from 'src/graphql/client'
 import { useDispatch } from 'react-redux'
-import { toggleToast } from 'src/redux/modules/toast'
+import { IToast, toggleToast } from 'src/redux/modules/toast'
 
 export const handler = (code: string): string => {
   switch (code) {
@@ -20,9 +20,7 @@ export const handler = (code: string): string => {
 
 const ErrorHandler: React.FunctionComponent<{}> = () => {
   const dispatch = useDispatch()
-  const onToggleToast = React.useCallback(props => {
-    return dispatch(toggleToast(props))
-  }, [])
+  const onToggleToast = (props: IToast) => dispatch(toggleToast(props))
   return (
     <NetworkStatusNotifierElement
       render={({ loading, error }: { loading: boolean; error: ApolloError }) => {

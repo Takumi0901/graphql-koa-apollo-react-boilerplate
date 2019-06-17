@@ -12,13 +12,13 @@ import { toggleAuth } from 'src/redux/modules/auth'
 const Header: React.FunctionComponent<RouteComponentProps<{}>> = ({ history }) => {
   const onSubmitLogout = useSignoutMutation()
   const token = useSelector((state: IStore) => state.auth.token)
-
   const dispatch = useDispatch()
-  const onClickSignOut = React.useCallback(() => {
+  const removedToken = () => dispatch(toggleAuth({ token: '' }))
+  const onClickSignOut = () => {
     onSubmitLogout()
     history.push('/login')
-    return dispatch(toggleAuth({ token: '' }))
-  }, [])
+    removedToken()
+  }
 
   return (
     <ScHeader color={'white'}>

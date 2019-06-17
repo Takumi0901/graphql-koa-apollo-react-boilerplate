@@ -9,7 +9,7 @@ import { password, email, required, composeValidators } from 'src/utils/Validate
 import { Formik, FormikProps } from 'formik'
 import { useDispatch } from 'react-redux'
 import { toggleAuth } from 'src/redux/modules/auth'
-import { toggleToast } from 'src/redux/modules/toast'
+import { IToast, toggleToast } from 'src/redux/modules/toast'
 
 type Values = {
   email: string
@@ -20,14 +20,13 @@ type Props = {}
 
 const LoginField: React.FunctionComponent<RouteComponentProps<{}> & Props> = ({ history }) => {
   const dispatch = useDispatch()
-  const setToken = React.useCallback((token: string) => {
+  const onToggleAuth = (token: string) => dispatch(toggleAuth({ token: token }))
+  const setToken = (token: string) => {
     localStorage.token = token
     history.push('/')
-    return dispatch(toggleAuth({ token: token }))
-  }, [])
-  const onToggleToast = React.useCallback(props => {
-    return dispatch(toggleToast(props))
-  }, [])
+    onToggleAuth(token)
+  }
+  const onToggleToast = (props: IToast) => dispatch(toggleToast(props))
   const onSubmitSignIn = useSigninMutation({
     update: (_, { data }) => {
       if (data.signin.success) {
