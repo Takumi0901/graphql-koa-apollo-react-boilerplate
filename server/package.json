@@ -28,7 +28,7 @@
     "graphql-iso-date": "^3.6.1",
     "joi": "^13.1.2",
     "jsonwebtoken": "^8.2.0",
-    "knex": "^0.14.4",
+    "knex": "^0.19.5",
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.0",
     "koa-helmet": "^3.3.0",
