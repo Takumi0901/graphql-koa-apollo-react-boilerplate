@@ -21,7 +21,7 @@
     "@koa/cors": "^2.2.3",
     "@okgrow/graphql-scalars": "^0.4.5",
     "apollo-server-koa": "^2.4.8",
-    "async": "^2.6.0",
+    "async": "^2.6.4",
     "bcryptjs": "^2.4.3",
     "graphql": "^14.1.1",
     "graphql-import": "^0.7.1",
