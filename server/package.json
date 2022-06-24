@@ -34,7 +34,7 @@
     "koa-helmet": "^3.3.0",
     "koa-router": "^7.4.0",
     "moment": "^2.22.0",
-    "node-fetch": "^2.3.0",
+    "node-fetch": "^2.6.7",
     "pino": "^4.15.0",
     "ts-node": "^8.0.3",
     "uuid": "^3.3.2"
