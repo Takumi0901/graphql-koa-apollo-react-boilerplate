@@ -33,7 +33,7 @@
     "koa-bodyparser": "^4.2.0",
     "koa-helmet": "^3.3.0",
     "koa-router": "^7.4.0",
-    "moment": "^2.22.0",
+    "moment": "^2.29.4",
     "node-fetch": "^2.3.0",
     "pino": "^4.15.0",
     "ts-node": "^8.0.3",
